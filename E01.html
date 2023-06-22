@@ -1,3 +1,4 @@
+<meta charset="UTF-8";>
 <script>
     //PROBLEMA: Big Brother Dev
     //Peça para o usuário informar a nota que o aluno que ajudou (TUTOR) obteve no terceiro trimestre.
@@ -6,11 +7,24 @@
     //Contudo, caso o aluno que ajudou (TUTOR) obteve maior nota, bonifique-o com um adicional de 10% da nota do aluno ajudado, e o programa apresentará a mensagem "CONTINUE ENSINANDO!" e também apresentará a nota final do aluno que ajudou (TUTOR).
 
     //ENTRADA
-
-
+        const tutor = Number(prompt("Insira a nota obtida no terceiro trimestre pelo Tutor").trim().replace(",", "."));
+        const ajudado = Number(prompt("Insira a nota obtida no terceiro trimestre pelo aluno no qual foi ajudado").trim().replace(",", "."));
     //PROCESSAMENTO
-
-
+        const nota = (ajudado*0.10) + tutor;
+        if (isNaN(tutor)|| isNaN(ajudado)) {
+            alert("Valor Inválido")
+        }
+        else{
+            if(ajudado>tutor){
+                alert(`CRIA MAIOR QUE O CRIADOR, a nota do aluno ajudado foi de ${ajudado.toFixed(1).replace(".", ",")}`);
+            }
+            else if(nota >= 10){
+                alert(`CONTINUE ENSINANDO, nota do Tutor foi 10`);
+            }
+            else if(tutor>ajudado){
+                alert(`CONTINUE ENSINANDO, nota do tutor foi ${nota.toFixed(1).replace(".", ",")}`);
+            }
+        }
     //SAÍDA
 
 </script>
